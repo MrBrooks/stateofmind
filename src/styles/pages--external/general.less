@@ -1,8 +1,66 @@
 body{
-  background-color: #212121;
+  //background-color: #212121;
   min-height: 100vh;
-  font-family: 'Lato', sans-serif;
+  font-family: 'EB Garamond', sans-serif;
+  color: @black;
+  background-color: @white;
+  font-size: 20px;
+
 }
+
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Lato', sans-serif;
+  color: @black;
+}
+
+h1{
+  font-size: 32px;
+  text-transform: uppercase;
+
+}
+
+h2{
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+h3{
+  font-size: 24px;
+  text-transform: none;
+}
+
+h4{
+  font-size: 16px;
+  text-transform: uppercase;
+
+}
+
+h5{
+  font-size: 16px;
+}
+
+a{
+  color: @link;
+  font-size: 20px;
+  text-decoration: underline;
+  transition: all 250ms;
+  &:hover,&:focus{
+    color: @link-hover;
+  }
+  &:visited{
+    color: @link-visited;
+  }
+}
+
+.no-underline{
+  text-decoration: none;
+  &:hover, &:focus{
+    text-decoration: none;
+  }
+}
+
+
+/*
 .soon{
   color: #c99376;
 }
@@ -23,3 +81,4 @@ body{
   font-size: 11px;
   letter-spacing: 1px;
 }
+*/
