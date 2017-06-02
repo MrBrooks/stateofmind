@@ -1,0 +1,22 @@
+.btn{
+  .col12(4);
+  max-width: 310px;
+  padding: 25px 20px;
+  color: @black;
+  font-size: 14px;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid @bronze;
+  transition: all 500ms;
+  &:hover{
+    background-color: @bronze;
+  }
+  &:focus{
+    box-shadow: none;
+    outline: none;
+  }
+  &--inverse{
+    color: @white;
+  }
+}

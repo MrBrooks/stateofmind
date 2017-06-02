@@ -1,5 +1,37 @@
 .line-through{
+  @height: 16px;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  text-transform: uppercase;
+  padding-left: 3px;
+  padding-right: 9px;
+  color: @bronze-light;
+  font-size: @height;
+  letter-spacing: 0.15rem;
+  line-height: 1;
+  cursor: pointer;
   &:hover{
-
+    &:before{
+      width: 100%;
+    }
+  }
+  &:focus{
+    outline: none;
+    box-shadow: none;
+    &:before{
+      width: 100%;
+    }
+  }
+  &:before{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: @height/2 - 1px;
+    width: 0;
+    height: 1px;
+    background-color: @bronze;
+    transition: all 500ms;
   }
 }

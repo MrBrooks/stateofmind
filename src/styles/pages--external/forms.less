@@ -1,0 +1,40 @@
+.field{
+  .col12(4);
+  max-width: 310px;
+  margin-bottom: 20px;
+  input{
+    background-color: @gray-light;
+    border: 1px solid transparent;
+    padding: 25px 20px;
+    font-size: 14px;
+    letter-spacing: 0.1rem;
+    width: 100%;
+    transition: border 200ms;
+    &:focus{
+      box-shadow: none;
+      outline: none;
+      border: 1px solid @bronze;
+    }
+  }
+  textarea{
+    background-color: @gray-light;
+    border: 1px solid transparent;
+    padding: 25px 20px;
+    height: 140px;
+    resize: vertical;
+    font-size: 16px;
+    letter-spacing: 0.1rem;
+    width: 100%;
+    transition: border 200ms;
+    &:focus{
+      box-shadow: none;
+      outline: none;
+      border: 1px solid @bronze;
+    }
+  }
+  label{
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+
