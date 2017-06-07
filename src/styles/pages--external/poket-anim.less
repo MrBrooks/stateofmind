@@ -1,0 +1,17 @@
+.poket-anim{
+  position: relative;
+  overflow: hidden;
+  &__content{
+    position: relative;
+    will-change: transform, opacity;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform  500ms, opacity 250ms;
+  }
+  &.visible{
+    .poket-anim__content{
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+}

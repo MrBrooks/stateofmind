@@ -1,0 +1,59 @@
+.arrow{
+  &--left{
+    transform: rotate(90deg);
+    transform-origin: 50% 50%;
+  }
+  &--right{
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+  }
+  &--up{
+    transform: rotate(180deg);
+    transform-origin: 50% 50%;
+  }
+  &--down{
+    transform: rotate(0deg);
+    transform-origin: 50% 50%;
+  }
+  &--bronze{
+    .arrow__tail, .arrow__circle, .arrow__head{
+      fill: @bronze;
+    }
+  }
+  &:hover{
+
+  }
+}
+.arrow-wrapper{
+  padding: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.css-arrow{
+  @width: 13px;
+  @height: 30px;
+  width: @width;
+  height: @height;
+  position: relative;
+  &__tail{
+    position: absolute;
+    top: 0;
+    left: floor(@width/2);
+    width: 1px;
+    height: @height;
+    background-color: @bronze;
+
+  }
+  &__head{
+  }
+  &__circle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: @width;
+    height: @width;
+    border-radius: 50%;
+    border: 1px solid @bronze;
+  }
+}

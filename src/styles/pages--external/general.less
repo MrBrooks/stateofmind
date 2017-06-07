@@ -5,7 +5,7 @@ body{
   color: @black;
   background-color: @white;
   font-size: 20px;
-
+  font-family: 'EB Garamond', serif;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -17,24 +17,28 @@ h1{
   font-size: 32px;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
+  font-weight: 900;
 }
 
 h2{
   font-size: 24px;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
+  font-weight: 900;
 }
 
 h3{
   font-size: 24px;
   text-transform: none;
   letter-spacing: 0.05rem;
+  font-weight: 900;
 }
 
 h4{
   font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
+  font-weight: 700;
 }
 
 h5{
@@ -61,6 +65,46 @@ a{
   }
 }
 
+.no-scroll{
+  overflow: hidden;
+}
+
+.inherit-fz{
+  font-size: inherit;
+}
+
+.hr{
+  margin: 5px 0;
+  clear: both;
+  &--gray{
+    border-color: @gray;
+  }
+}
+.header{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(33, 33, 33, 0.95);
+  height: 63px;
+  z-index: 1000;
+  padding: 0 25px;
+  text-align: center;
+  .menu-btn{
+    float: left;
+  }
+  .lang-switcher{
+    float: right;
+    display: inline-block;
+  }
+  &__logo{
+    margin: auto;
+    padding-top: 20px;
+  }
+  &>div{
+    display: inline-block;
+  }
+}
 
 /*
 .soon{

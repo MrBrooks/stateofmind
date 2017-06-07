@@ -1,0 +1,9 @@
+.scale-anim{
+  will-change: transform;
+  transform: scale(0) rotate(-45deg);
+  transition: transform 300ms cubic-bezier(0, 0, 0.15, 1.38);
+  transform-origin: 50% 50%;
+  &.visible{
+    transform: scale(1) rotate(0deg);
+  }
+}

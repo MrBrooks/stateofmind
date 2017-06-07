@@ -1,0 +1,110 @@
+.blog-item{
+  .col12(6);
+  float: left;
+  height: 280px;
+  position: relative;
+  color: @white;
+  padding: 60px;
+  overflow: hidden;
+  font-family: 'Lato', sans-serif;
+  &:first-child{
+    .col12(12);
+    height: 370px;
+    .blog-item__date{
+      margin-bottom: 20px;
+    }
+    .blog-item__title{
+      font-size: 32px;
+      max-width: 50%;
+      margin-bottom: 38px;
+      &:extend(h1);
+      text-transform: none;
+      color: inherit;
+    }
+    .btn{
+      opacity: 1;
+    }
+  }
+  .btn{
+    max-width: 230px;
+    opacity: 0;
+    transition: opacity 500ms;
+  }
+  &__background{
+    .background();
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    will-change: transform;
+    transform: scale(1.0001);
+    transition: transform 10000ms linear;
+  }
+  &__date{
+    position: relative;
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  &__title{
+    position: relative;
+    margin-bottom: 30px;
+    max-width: 90%;
+    &:extend(h2);
+    text-transform: none;
+    color: inherit;
+  }
+  &:hover{
+    .btn{
+      opacity: 1;
+    }
+    .blog-item__background{
+      transform: scale(1.2);
+    }
+  }
+}
+
+.blog-item-small{
+  font-family: 'Lato', sans-serif;
+  position: relative;
+  background-color: #fff;
+  height: 185px;
+  .col12(12);
+  padding: 25px;
+  margin: 10px 0;
+  overflow: hidden;
+  &__date{
+    position: relative;
+    font-size: 14px;
+    color: @gray;
+    transition: color 1000ms;
+  }
+  &__title{
+    position: relative;
+    font-size: 18px;
+    transition: color 1000ms;
+  }
+  &__background{
+    .background();
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    transform: scale(1);
+    transition: transform 5000ms linear, opacity 1000ms;
+  }
+  &:hover{
+    .blog-item-small__background{
+      opacity: 1;
+      transform: scale(1.2);
+    }
+    .blog-item-small__date{
+      color: @white;
+    }
+    .blog-item-small__title{
+      color: @white;
+    }
+  }
+}

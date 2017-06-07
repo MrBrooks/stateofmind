@@ -1,0 +1,39 @@
+.lang-switcher{
+  color: #6b6b6b;
+  font-size: 14px;
+  padding-top: 17px;
+  font-family: 'Lato', sans-serif;
+  &__lang{
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    transition: color 500ms;
+    cursor: pointer;
+    &.active{
+      color: @bronze-light;
+      &:before{
+        height: 15px;
+        transition: height 500ms 500ms;
+      }
+    }
+    &:before{
+      content: '';
+      position: absolute;
+      display: block;
+      width: 1px;
+      height: 0px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      top: -17px;
+      transition: height 500ms 0ms;
+      background-color: @bronze;
+    }
+    &:hover{
+      &:before{
+        height: 15px;
+        transition: height 500ms 0ms;
+      }
+    }
+  }
+}

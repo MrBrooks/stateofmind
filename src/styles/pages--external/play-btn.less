@@ -1,0 +1,40 @@
+.play-btn{
+  @duration: 500ms;
+  background-color: @black;
+  color: @white;
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 2px;
+  font-size: 14px;
+  line-height: 1;
+  &>div{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 5px;
+  }
+  &__center{
+    will-change: transform;
+    transform:  scale(1);
+    transition: transform @duration;
+  }
+  &__left{
+    transition: opacity @duration, transform @duration;
+    opacity: 0;
+    transform: translateX(15px);
+    will-change: opacity, transform;
+  }
+  &__right{
+    transition: opacity @duration, transform @duration;
+    opacity: 0;
+    transform: translateX(-15px);
+    will-change: opacity, transform;
+  }
+  &:hover{
+    .play-btn__center{
+      transform: scale(1.1);
+    }
+    .play-btn__left, .play-btn__right{
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+}

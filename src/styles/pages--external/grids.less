@@ -1,0 +1,63 @@
+.grid{
+  &:after{
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+.grid10-2{
+  width: 100%;
+  .col{
+    width: 20%;
+    float: left;
+  }
+  &:after{
+    content: '';
+    clear: both;
+    display: block;
+  }
+}
+.col-gen(@n){
+  float: left;
+  width: 100%/12 * @n;
+  padding: 0 10px;
+}
+.col1{
+  .col-gen(1)
+}
+.col2{
+  .col-gen(2)
+}
+.col3{
+  .col-gen(3)
+}
+.col4{
+  .col-gen(4)
+}
+.col5{
+  .col-gen(5)
+}
+.col6{
+  .col-gen(6)
+}
+.col7{
+  .col-gen(7)
+}
+.col8{
+  .col-gen(8)
+}
+.col9{
+  .col-gen(9)
+}
+.col10{
+  .col-gen(10)
+}
+.col11{
+  .col-gen(11)
+}
+.col12{
+  .col-gen(12)
+}
+
+
+
