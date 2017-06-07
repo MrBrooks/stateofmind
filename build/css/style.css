@@ -1005,6 +1005,18 @@ This must be run when you have at least 2 sprites.
     margin-top: 15px!important;
     margin-left: 15px!important;
 }
+.white
+{
+    color: #f7f7f7;
+}
+.black
+{
+    color: #212121;
+}
+.bronze
+{
+    color: #c99376;
+}
 body
 {
     font-family: 'EB Garamond', sans-serif;
@@ -1296,7 +1308,6 @@ a:visited
     letter-spacing: 2px;
 
     color: #f7f7f7;
-    background-color: #212121;
 }
 .play-btn > div
 {
@@ -2085,6 +2096,108 @@ video.fullscreen
 
     width: 100%;
     height: 100vh;
+}
+.background-video
+{
+    position: relative;
+}
+.background-video__content
+{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 150px;
+    margin: auto;
+
+    text-align: center;
+}
+.borders
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    overflow: hidden;
+
+    width: 100%;
+    height: 100%;
+}
+.borders.hover .borders__item:nth-child(1)
+{
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+}
+.borders.hover .borders__item:nth-child(2)
+{
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+}
+.borders.hover .borders__item:nth-child(3)
+{
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+}
+.borders.hover .borders__item:nth-child(4)
+{
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+}
+.borders__item
+{
+    position: absolute;
+
+    -webkit-transition: -webkit-transform 500ms;
+            transition:         transform 500ms;
+
+    background-color: #f7f7f7;
+
+    will-change: transform;
+}
+.borders__item:nth-child(1)
+{
+    top: 0;
+    left: 0;
+
+    width: 10px;
+    height: 100%;
+
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+}
+.borders__item:nth-child(2)
+{
+    top: 0;
+    right: 0;
+
+    width: 10px;
+    height: 100%;
+
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+}
+.borders__item:nth-child(3)
+{
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 10px;
+
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+}
+.borders__item:nth-child(4)
+{
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 10px;
+
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
 }
 .poket-anim
 {

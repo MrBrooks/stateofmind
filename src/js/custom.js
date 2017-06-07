@@ -13,6 +13,7 @@ $(window).load(function(){
 $(document).ready(function() {
   var menu = new Menu();
   var lang = new LangSwitcher();
+  var play_btn = new PlayButton();
 });
 
 
@@ -137,6 +138,27 @@ function classTrigger(){
     setTimeout(function(){
       item.el.addClass(item.class);
     }, item.delay);
+  }
+
+  init();
+}
+
+function PlayButton(){
+  var btn, borders;
+
+  function init(){
+    btn = $('.play-btn');
+    if(btn.length){
+      borders = $('.borders');
+      btn.hover(onMouseIn, onMouseOut);
+    }
+  }
+
+  function onMouseIn(){
+    borders.addClass('hover');
+  }
+  function onMouseOut(){
+    borders.removeClass('hover');
   }
 
   init();
