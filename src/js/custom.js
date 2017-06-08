@@ -237,7 +237,7 @@ function ProjectSlider(){
   function init(){
     slider = $('.projects-slider');
     if(slider.length > 0){
-      // slides = slider.find('.');
+      slides = slider.find('.projects-slider__item');
       backgrounds = slider.find('.projects-slider__background');
       dots_wrapper = slider.find('.projects-slider__dots');
       next = slider.find('.projects-slider__next');
@@ -265,6 +265,8 @@ function ProjectSlider(){
   function Next(){
     current = (current+1) % count;
     updateDots();
+    updateSlide();
+    updateBackground();
   }
 
   function Prev(){
@@ -274,6 +276,8 @@ function ProjectSlider(){
       --current;
     }
     updateDots();
+    updateSlide();
+    updateBackground();
   }
 
   function updateDots(){
@@ -290,8 +294,14 @@ function ProjectSlider(){
     }
   }
 
-  function updateSlide(index){
+  function updateSlide(){
+    slides.removeClass('active');
+    slides.eq(current).addClass('active');
+  }
 
+  function updateBackground(){
+    backgrounds.removeClass('active');
+    backgrounds.eq(current).addClass('active');
   }
 
   init();
