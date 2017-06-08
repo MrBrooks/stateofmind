@@ -13,7 +13,9 @@ $(window).load(function(){
 $(document).ready(function() {
   var menu = new Menu();
   var lang = new LangSwitcher();
+  var main_slider = new MainSlider();
   var play_btn = new PlayButton();
+  var projectSlider = new ProjectSlider();
 });
 
 
@@ -159,6 +161,137 @@ function PlayButton(){
   }
   function onMouseOut(){
     borders.removeClass('hover');
+  }
+
+  init();
+}
+
+function MainSlider(){
+  var slider, slides, current, next_btn, delay, last_scroll, count, anim_flag, temp;
+
+  function init(){
+    slider = $('.main-slider');
+    if(slider.length){
+      slides = slider.find('.main-slider__slide');
+      next_btn = slider.find('.main-slider__next');
+      count = slides.length;
+      current = 0;
+      delay = 750;
+      anim_flag = false;
+      next_btn.on('click', next);
+      // $(document).on('wheel', onMouseWheel);
+      document.addEventListener("wheel", onMouseWheel, false);
+      // slider.on('touchstart', function(e){
+      //   console.log(e);
+      // });
+    }
+  }
+
+  function next(){
+    if(current === count - 1){
+      return 0;
+    } else{
+      slides.eq(current).removeClass('active');
+      ++current;
+    }
+    slides.eq(current).addClass('active');
+  }
+
+  function prev(){
+
+    if(current === 0){
+      return 0;
+    } else{
+      slides.eq(current).removeClass('active');
+      --current;
+    }
+    slides.eq(current).addClass('active');
+  }
+
+
+  function onMouseWheel(e){
+    // console.log(e);
+    if(!anim_flag){
+      if(e.deltaY < 0){
+        anim_flag = true;
+        prev();
+      }
+      if(e.deltaY > 0){
+        anim_flag = true;
+        next();
+      }
+      if(e.deltaY !== 0){
+        setTimeout(function(){
+          anim_flag = false;
+        },delay);
+      }
+    }
+  }
+
+  init();
+}
+
+function ProjectSlider(){
+  var slider, slides, dots_wrapper, next, prev, backgrounds, count, dots, current, visible_count;
+
+  function init(){
+    slider = $('.projects-slider');
+    if(slider.length > 0){
+      // slides = slider.find('.');
+      backgrounds = slider.find('.projects-slider__background');
+      dots_wrapper = slider.find('.projects-slider__dots');
+      next = slider.find('.projects-slider__next');
+      prev = slider.find('.projects-slider__prev');
+      count = backgrounds.length;
+      current = 0;
+      visible_count = 5;
+      dots = [];
+      addDots();
+
+      next.on('click', Next);
+      prev.on('click', Prev);
+    }
+  }
+
+  function addDots(){
+    for(var i = 0; i < count; i++){
+      dots_wrapper.append($('<div class="projects-slider__dot"></div>'));
+    }
+    dots = dots_wrapper.children();
+    // dots.eq(0).addClass('active');
+    updateDots();
+  }
+
+  function Next(){
+    current = (current+1) % count;
+    updateDots();
+  }
+
+  function Prev(){
+    if(current === 0){
+      current = count - 1;
+    } else{
+      --current;
+    }
+    updateDots();
+  }
+
+  function updateDots(){
+    var temp, half;
+    if(count < visible_count){
+      visible_count = count;
+    }
+    half =  visible_count / 2;
+    dots.removeClass('active next prev');
+    dots.eq(current).addClass('active');
+    for(var i = 1; i <= half; i++){
+      dots.eq(current + i).addClass('next');
+      dots.eq(current - i).addClass('prev');
+    }
+  }
+
+  function updateSlide(index){
+
   }
 
   init();

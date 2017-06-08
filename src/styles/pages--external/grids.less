@@ -1,3 +1,4 @@
+@col-padding: 10px;
 .grid{
   &:after{
     content: '';
@@ -19,8 +20,13 @@
 }
 .col-gen(@n){
   float: left;
+  position: relative;
+  min-height: 1px;
   width: 100%/12 * @n;
-  padding: 0 10px;
+  padding: 0 @col-padding;
+}
+.col-p-gen(@n){
+  margin-left: 100% / 12 * @n;
 }
 .col1{
   .col-gen(1)
@@ -59,5 +65,23 @@
   .col-gen(12)
 }
 
+.colp-1{
+  .col-p-gen(1);
+}
+.colp-2{
+  .col-p-gen(2);
+}
+.colp-3{
+  .col-p-gen(3);
+}
+.colp-4{
+  .col-p-gen(4);
+}
+.colp-5{
+  .col-p-gen(5);
+}
+.colp-6{
+  .col-p-gen(6);
+}
 
 

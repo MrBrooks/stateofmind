@@ -1,5 +1,36 @@
 .main-slider{
+  @duration: 500ms;
   position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  &__slide{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    will-change: transform;
+    transition: transform 0ms @duration;
+    z-index: 998;
+    &--left{
+      transform: translateX(-100%);
+      &.active{
+        transform: translateX(0%);
+        transition: transform @duration;
+        z-index: 999;
+      }
+    }
+    &--right{
+      transform: translateX(100%);
+      &.active{
+        transform: translateX(0%);
+        transition: transform @duration;
+        z-index: 999;
+      }
+    }
+  }
   &__next{
     position: absolute;
     text-align: center;
