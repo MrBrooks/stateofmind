@@ -5,6 +5,16 @@
   .background();
   text-align: center;
   &__slogan{
-    &:extend(h1);
+
+  }
+  &--left{
+    .simple-banner__slogan{
+      max-width: 50%;
+      text-align: left;
+      margin: auto;
+    }
+  }
+  &--half{
+    height: 50vh;
   }
 }

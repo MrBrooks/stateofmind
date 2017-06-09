@@ -78,8 +78,7 @@ dfn
     font-style: italic;
 }
 h1,
-.blog-item:first-child .blog-item__title,
-.simple-banner__slogan
+.blog-item:first-child .blog-item__title
 {
     font-size: 2em;
 
@@ -1046,7 +1045,6 @@ h6,
 .blog-item:first-child .blog-item__title,
 .blog-item__title,
 .point__title,
-.simple-banner__slogan,
 .press-block__title
 {
     font-family: 'Lato', sans-serif;
@@ -1056,8 +1054,7 @@ h6,
     color: #212121;
 }
 h1,
-.blog-item:first-child .blog-item__title,
-.simple-banner__slogan
+.blog-item:first-child .blog-item__title
 {
     font-size: 32px;
     font-weight: 900;
@@ -2377,6 +2374,97 @@ video.fullscreen
     -webkit-transform: translateY(0px);
             transform: translateY(0px);
 }
+.tabs
+{
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+
+    width: 100%;
+}
+.tabs__paginations
+{
+    min-width: 260px;
+    padding: 30px 50px 30px 40px;
+
+    background-color: white;
+}
+.tabs__numbers
+{
+    position: relative;
+
+    height: 40px;
+}
+.tabs__number
+{
+    font-size: 40px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    opacity: 0;
+    color: #c99376;
+}
+.tabs__number.active
+{
+    opacity: 1;
+}
+.tabs__pagination-item
+{
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+
+    margin-bottom: 20px;
+
+    cursor: pointer;
+
+    color: #585858;
+}
+.tabs__pagination-item.active
+{
+    font-weight: 700;
+
+    color: #212121;
+}
+.tabs__pagination-list
+{
+    padding: 0;
+
+    list-style: none;
+}
+.tabs__content
+{
+    position: relative;
+
+    width: 100%;
+    padding: 20px 30px 30px 60px;
+}
+.tabs__item
+{
+    position: absolute;
+    z-index: 998;
+    top: 20px;
+    left: 60px;
+
+    -webkit-transition: -webkit-transform 500ms 0ms, opacity 250ms 0ms;
+            transition:         transform 500ms 0ms, opacity 250ms 0ms;
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+
+    opacity: 0;
+}
+.tabs__item.active
+{
+    z-index: 999;
+
+    -webkit-transition: -webkit-transform 500ms 250ms, opacity 250ms 500ms;
+            transition:         transform 500ms 250ms, opacity 250ms 500ms;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+
+    opacity: 1;
+}
 .slogan-block
 {
     display: -webkit-box;
@@ -2427,6 +2515,17 @@ video.fullscreen
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
+}
+.simple-banner--left .simple-banner__slogan
+{
+    max-width: 50%;
+    margin: auto;
+
+    text-align: left;
+}
+.simple-banner--half
+{
+    height: 50vh;
 }
 .displaced-block
 {
