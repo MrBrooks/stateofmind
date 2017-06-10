@@ -1,0 +1,26 @@
+.article-footer{
+  &:after{
+    content: '';
+    display: block;
+    clear: both;
+  }
+  &__author{
+    color: @gray;
+    float: left;
+  }
+  &__date{
+    color: @gray;
+    float: right;
+  }
+  &__share-btns{
+    float: right;
+  }
+  &__share-title{
+    &:extend(h4);
+    text-transform: none;
+    float: left;
+  }
+  .hr{
+    margin: 25px 0;
+  }
+}
