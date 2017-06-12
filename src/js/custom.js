@@ -16,6 +16,7 @@ $(document).ready(function() {
   var main_slider = new MainSlider();
   var play_btn = new PlayButton();
   var projectSlider = new ProjectSlider();
+  var pressSlider = new PressSlider();
   var tabs = new Tabs();
 });
 
@@ -334,6 +335,48 @@ function Tabs(){
       numbers.eq(current).addClass('active');
       items.eq(current).addClass('active');
     }
+  }
+
+  init();
+}
+
+function PressSlider(){
+  var slider, next, logos, prev, slide, current, count;
+
+  function init(){
+    slider = $('.press-slider');
+    if(slider.length > 0){
+      prev = slider.find('.press-slider__prev');
+      next = slider.find('.press-slider__next');
+      slide = slider.find('.press-slider__item');
+      logos = slider.find('.press-slider__logo');
+      current = 0;
+      count = slide.length;
+
+      prev.on('click', onPrevClick);
+      next.on('click', onNextClick);
+    }
+  }
+
+  function onPrevClick(){
+    current = current === 0? count - 1 : current - 1;
+    updateLogo();
+    updateSlide();
+  }
+
+  function onNextClick(){
+    current = (current+1) % count;
+    updateLogo();
+    updateSlide();
+  }
+
+  function updateLogo(){
+    logos.removeClass('active');
+    logos.eq(current).addClass('active');
+  }
+  function updateSlide(){
+    slide.removeClass('active');
+    slide.eq(current).addClass('active');
   }
 
   init();

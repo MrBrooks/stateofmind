@@ -2772,6 +2772,33 @@ video.fullscreen
     height: 11px;
     padding: 5px 0;
 }
+.press-slider__logo
+{
+    display: none;
+}
+.press-slider__logo.active
+{
+    display: block;
+}
+.press-slider__navs
+{
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+
+    width: 100%;
+
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+.press-slider__item
+{
+    display: none;
+}
+.press-slider__item.active
+{
+    display: block;
+}
 .instrument-block
 {
     display: -webkit-box;
